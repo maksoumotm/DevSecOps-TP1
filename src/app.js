@@ -33,7 +33,7 @@ function testContainer() {
             <strong>Test du Container Réussi</strong><br><br>
             docker ps<br>
             CONTAINER ID   IMAGE                                    STATUS<br>
-            ${document.getElementById('container-id').textContent}      ghcr.io/user/devops-tp-docker:latest     Up 5 minutes<br>
+            ${document.getElementById('container-id').textContent}      ghcr.io/maksoumotm/devsecops-tp1:latest     Up 5 minutes<br>
             - Serveur Nginx : OK<br>
             - Application Web : OK<br>
             - Port 80 : LISTENING<br>
