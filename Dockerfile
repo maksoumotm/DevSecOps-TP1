@@ -1,13 +1,44 @@
-FROM nginx:alpine
+# Utiliser une version spécifique (pas latest)
+FROM nginx:1.25.3-alpine
+
 # Métadonnées
 LABEL maintainer="TP DevOps"
-LABEL description="Application DevOps optimisée"
-# Copier en une seule couche
-COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
-COPY src/ /usr/share/nginx/html/
-# Supprimer les fichiers inutiles
-RUN rm -rf /usr/share/nginx/html/*.md
-EXPOSE 80
-HEALTHCHECK --interval=30s --timeout=3s \
-    CMD wget -q --spider http://localhost/ || exit 1
+LABEL description="Application DevOps sécurisée"
+LABEL org.opencontainers.image.source="https://github.com/[username]/[repo]"
+
+# Créer un utilisateur non-root
+RUN addgroup -g 1000 -S appgroup && \
+    adduser -u 1000 -S appuser -G appgroup
+
+# Installer uniquement les dépendances nécessaires
+RUN apk add --no-cache \
+    ca-certificates \
+    && rm -rf /var/cache/apk/*
+
+# Copier la configuration Nginx
+COPY --chown=appuser:appgroup nginx/nginx.conf /etc/nginx/conf.d/default.conf
+
+# Copier les fichiers de l'application
+COPY --chown=appuser:appgroup src/ /usr/share/nginx/html/
+
+# Définir les permissions appropriées
+RUN chown -R appuser:appgroup /usr/share/nginx/html && \
+    chmod -R 755 /usr/share/nginx/html
+
+# Modifier les permissions pour nginx
+RUN touch /var/run/nginx.pid && \
+    chown -R appuser:appgroup /var/run/nginx.pid && \
+    chown -R appuser:appgroup /var/cache/nginx
+
+# Passer à l'utilisateur non-root
+USER appuser
+
+# Exposer le port
+EXPOSE 8080
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+    CMD wget --quiet --tries=1 --spider http://localhost:8080/ || exit 1
+
+# Commande de démarrage
 CMD ["nginx", "-g", "daemon off;"]
