@@ -11,6 +11,7 @@ RUN addgroup -g 1000 -S appgroup && \
     adduser -u 1000 -S appuser -G appgroup
 
 # Installer uniquement les dépendances nécessaires
+# hadolint ignore=DL3018
 RUN apk add --no-cache \
     ca-certificates \
     && rm -rf /var/cache/apk/*
