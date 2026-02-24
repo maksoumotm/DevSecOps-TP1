@@ -1,0 +1,20 @@
+# General
+.DS_Store
+Thumbs.db
+
+# Python / Temp files (from our extraction process)
+__pycache__/
+*.py[cod]
+*_pdf.py
+*.txt
+extract_pdf.py
+pdf_content*.txt
+
+# Node
+node_modules/
+npm-debug.log
+
+# Docker
+.dockerignore
+
+!test-secret.txt
