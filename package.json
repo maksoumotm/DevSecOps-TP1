@@ -1,6 +1,6 @@
 {
   "name": "devops-tp-docker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TP DevSecOps avec Docker",
   "scripts": {
     "test": "echo \"No tests yet\""

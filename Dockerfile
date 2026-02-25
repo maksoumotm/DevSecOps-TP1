@@ -1,5 +1,5 @@
 # Utiliser une version spécifique (pas latest)
-FROM nginx:1.27-alpine
+FROM nginx:1.25.4-alpine
 
 # Métadonnées
 LABEL maintainer="TP DevOps"
@@ -10,9 +10,10 @@ LABEL org.opencontainers.image.source="https://github.com/[username]/[repo]"
 RUN addgroup -g 1000 -S appgroup && \
     adduser -u 1000 -S appuser -G appgroup
 
-# Installer uniquement les dépendances nécessaires
-# hadolint ignore=DL3018
-RUN apk add --no-cache \
+# Installer uniquement les dépendances nécessaires et patcher l'OS contre les vulnérabilités # hadolint ignore=DL3018
+RUN apk update && \
+    apk upgrade --no-cache && \
+    apk add --no-cache \
     ca-certificates \
     && rm -rf /var/cache/apk/*
 

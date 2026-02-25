@@ -1,0 +1,105 @@
+{
+  "total_count": 1,
+  "jobs": [
+    {
+      "id": 64699432811,
+      "run_id": 22357023205,
+      "workflow_name": "CodeQL",
+      "head_branch": "main",
+      "run_url": "https://api.github.com/repos/maksoumotm/DevSecOps-TP2/actions/runs/22357023205",
+      "run_attempt": 1,
+      "node_id": "CR_kwDORXvhas8AAAAPEGL_aw",
+      "head_sha": "ffadea51e015e4a27d1a20ff6f84766494466d84",
+      "url": "https://api.github.com/repos/maksoumotm/DevSecOps-TP2/actions/jobs/64699432811",
+      "html_url": "https://github.com/maksoumotm/DevSecOps-TP2/actions/runs/22357023205/job/64699432811",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-02-24T15:14:09Z",
+      "started_at": "2026-02-24T15:14:11Z",
+      "completed_at": "2026-02-24T15:15:33Z",
+      "name": "Analyze (javascript)",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-02-24T15:14:12Z",
+          "completed_at": "2026-02-24T15:14:14Z"
+        },
+        {
+          "name": "Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-02-24T15:14:14Z",
+          "completed_at": "2026-02-24T15:14:15Z"
+        },
+        {
+          "name": "Initialize CodeQL",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-02-24T15:14:15Z",
+          "completed_at": "2026-02-24T15:14:35Z"
+        },
+        {
+          "name": "Autobuild",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-02-24T15:14:35Z",
+          "completed_at": "2026-02-24T15:14:39Z"
+        },
+        {
+          "name": "Perform CodeQL Analysis",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-02-24T15:14:39Z",
+          "completed_at": "2026-02-24T15:15:29Z"
+        },
+        {
+          "name": "Post Perform CodeQL Analysis",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-02-24T15:15:29Z",
+          "completed_at": "2026-02-24T15:15:30Z"
+        },
+        {
+          "name": "Post Initialize CodeQL",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-02-24T15:15:30Z",
+          "completed_at": "2026-02-24T15:15:31Z"
+        },
+        {
+          "name": "Post Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-02-24T15:15:31Z",
+          "completed_at": "2026-02-24T15:15:31Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11,
+          "started_at": "2026-02-24T15:15:31Z",
+          "completed_at": "2026-02-24T15:15:31Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/maksoumotm/DevSecOps-TP2/check-runs/64699432811",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000000206,
+      "runner_name": "GitHub Actions 1000000206",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    }
+  ]
+}
